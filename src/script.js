@@ -133,8 +133,6 @@ const getNextQuoteReducer = (state = initialState, action) => {
 };
 
 //creating the Redux store and passing the reducer to it
-// const store = Redux.createStore(getNextQuoteReducer);
-
 const store = Redux.createStore(
   getNextQuoteReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
