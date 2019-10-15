@@ -133,7 +133,12 @@ const getNextQuoteReducer = (state = initialState, action) => {
 };
 
 //creating the Redux store and passing the reducer to it
-const store = Redux.createStore(getNextQuoteReducer);
+// const store = Redux.createStore(getNextQuoteReducer);
+
+const store = Redux.createStore(
+  getNextQuoteReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+); //second argument is to add Chrome's Redux DevTool's extension https://github.com/zalmoxisus/redux-devtools-extension that allows me to go back in the state history
 
 // React:
 
