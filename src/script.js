@@ -100,6 +100,9 @@ const quotes = [
 
 //Redux:
 
+// The UMD build makes Redux available as a window.Redux global variable
+const Redux = window.Redux;
+
 //defining initial state
 const initialState = {
   data: quotes[Math.floor(Math.random() * quotes.length)]
