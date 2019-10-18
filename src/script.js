@@ -190,26 +190,23 @@ const App = props => {
   //making the machine tweet
   let twitterLink;
 
-  const linkToRef = React.useMemo(() => {
-    let quoteTextElem = props.currentQuote.data.quoteText;
-    let quoteAuthorElem = " - " + props.currentQuote.data.quoteAuthor;
-    let contentQuote = quoteTextElem + quoteAuthorElem;
-    if (contentQuote.length > 280) {
-      let charCountAuthor = quoteAuthorElem.length;
-      const extraStylingChar = "..." + '"';
-      let extraCharCount = extraStylingChar.length;
-      let subString =
-        quoteTextElem.substring(0, 280 - extraCharCount - charCountAuthor) +
-        extraStylingChar +
-        quoteAuthorElem;
-      //generate url available for Twitter intent and inject url on HTML
-      twitterLink = "https://twitter.com/intent/tweet?text=" + subString;
-    } else {
-      //generate url available for Twitter intent and inject url on HTML
-      twitterLink = "https://twitter.com/intent/tweet?text=" + contentQuote;
-    }
-    return twitterLink;
-  }, [props.currentQuote.data.quoteText]);
+  let quoteTextElem = props.currentQuote.data.quoteText;
+  let quoteAuthorElem = " - " + props.currentQuote.data.quoteAuthor;
+  let contentQuote = quoteTextElem + quoteAuthorElem;
+  if (contentQuote.length > 280) {
+    let charCountAuthor = quoteAuthorElem.length;
+    const extraStylingChar = "..." + '"';
+    let extraCharCount = extraStylingChar.length;
+    let subString =
+      quoteTextElem.substring(0, 280 - extraCharCount - charCountAuthor) +
+      extraStylingChar +
+      quoteAuthorElem;
+    //generate url available for Twitter intent and inject url on HTML
+    twitterLink = "https://twitter.com/intent/tweet?text=" + subString;
+  } else {
+    //generate url available for Twitter intent and inject url on HTML
+    twitterLink = "https://twitter.com/intent/tweet?text=" + contentQuote;
+  }
 
   const random = array => {
     return Math.floor(Math.random() * array.length);
