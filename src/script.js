@@ -141,7 +141,7 @@ const store = Redux.createStore(
 // React:
 
 //creating a reusable quote box to handle a potential "future case" in which I want to add more screens/routes to the app and use the same quote box, but with different text(data).
-//I'm getting author and quote values from App component via props.
+//I'm getting author and text values from App component via props.
 const QuoteBox = ({ text, author }) => {
   //destructuring
   return (
