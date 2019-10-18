@@ -235,7 +235,7 @@ const App = props => {
           <QuoteBox
             text={props.currentQuote.data.quoteText}
             author={props.currentQuote.data.quoteAuthor}
-          />{" "}
+          />
           <div className="actions">
             <Button
               id="new-quote"
