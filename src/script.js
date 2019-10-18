@@ -216,7 +216,7 @@ const App = props => {
     return array[random(array)];
   };
 
-  //defining a function to (ultimately) update the Redux state with a new quote. Passing a randomly selected quote via props (?). Dispatching selectNewQuote() from props and passing in the randomly selected new quote as an argument
+  //defining a function to (ultimately) update the Redux state with a new quote. Passing a randomly selected quote via props. Dispatching selectNewQuote() from props and passing in the randomly selected new quote as an argument
   const chosenRandomQuoteToState = () => {
     //selecting a random quote from the array
     let chosenQuote = randomQuoteFunction(quotes);
