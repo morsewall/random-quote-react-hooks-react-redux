@@ -188,9 +188,9 @@ const TwitterShare = ({ link }) => {
 // defining the function component. Redux state and dispatch are passed to the component as props
 const App = props => {
   //making the machine tweet
-  let linkToRef;
+  let twitterLink;
 
-  const twitterLink = React.useMemo(() => {
+  const linkToRef = React.useMemo(() => {
     let quoteTextElem = props.currentQuote.data.quoteText;
     let quoteAuthorElem = " - " + props.currentQuote.data.quoteAuthor;
     let contentQuote = quoteTextElem + quoteAuthorElem;
@@ -203,12 +203,12 @@ const App = props => {
         extraStylingChar +
         quoteAuthorElem;
       //generate url available for Twitter intent and inject url on HTML
-      linkToRef = "https://twitter.com/intent/tweet?text=" + subString;
+      twitterLink = "https://twitter.com/intent/tweet?text=" + subString;
     } else {
       //generate url available for Twitter intent and inject url on HTML
-      linkToRef = "https://twitter.com/intent/tweet?text=" + contentQuote;
+      twitterLink = "https://twitter.com/intent/tweet?text=" + contentQuote;
     }
-    return linkToRef;
+    return twitterLink;
   }, [props.currentQuote.data.quoteText]);
 
   const random = array => {
@@ -242,7 +242,7 @@ const App = props => {
               title="Get New Quote"
               onClick={chosenRandomQuoteToState}
             />
-            <TwitterShare link={linkToRef} />
+            <TwitterShare link={twitterLink} />
           </div>
         </div>
       </div>
